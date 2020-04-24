@@ -1,22 +1,29 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func fizzbuzz(num int) {
 
 	for i := 1; i <= num; i++ {
 
-		if i%3 == 0 && i%5 == 0 {
-			fmt.Printf("FizzBuzz")
-		} else if i%5 == 0 {
-			fmt.Printf("Buzz")
-		} else if i%3 == 0 {
-			fmt.Printf("Fizz")
-		} else {
-			fmt.Printf("%v", i)
+		var output string = ""
+
+		if i%3 == 0 {
+			output += string("Fizz")
+		}
+		if i%5 == 0 {
+			output += string("Buzz")
+
+		}
+		if output == "" {
+			output += strconv.Itoa(i)
 		}
 
-		fmt.Printf("  \n")
+		fmt.Printf(output)
+		fmt.Printf("  ")
 
 	}
 }
