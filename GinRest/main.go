@@ -15,7 +15,7 @@ func homePage(c *gin.Context) {
 
 func postHomePage(c *gin.Context) {
 
-	body := c.Request.GetBody
+	body := c.Request.Body
 	value, err := ioutil.ReadAll(body)
 
 	if err != nil {
